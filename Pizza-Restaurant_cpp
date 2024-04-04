@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  float Pizza = 15, Soda = 7, Nuggets = 15, Sopa = 10, agua = 1, carrito = 0,
+        items = 0;
+  string r, factura;
+
+  cout << "---------------------------\n"
+       << "   Este es nuestro menu\n"
+       << "---------------------------\n"
+       << "eliga una letra segun lo que pida\n"
+       << endl;
+  while (r[0] != 'E') {
+    if (r[0] == 'p' || r[0] == 's' || r[0] == 'n' || r[0] == 'S' ||
+        r[0] == 'a') {
+      items += 1;
+    }
+    switch (r[0]) {
+    case 'p':
+      factura += "\n   Pizza\n";
+      break;
+    case 's':
+      factura += "\n   Soda\n";
+      break;
+    case 'n':
+      factura += "\n   Nuggets\n";
+      break;
+    case 'S':
+      factura += "\n   Sopa\n";
+      break;
+    case 'a':
+      factura += "\n   Agua\n";
+      break;
+    }
+    cout << "---------------------------\n";
+    cout << "\n(p)Pizza    " << Pizza;
+    cout << "\n(s)Soda     " << Soda;
+    cout << "\n(n)Nuggets  " << Nuggets;
+    cout << "\n(S)Sopa     " << Sopa;
+    cout << "\n(a)Agua     " << agua;
+    cout << "\n(E)Salir    ";
+    cout << "\n---------------------------\n";
+    cout << "El total de su carrito es de: " << carrito << endl;
+    cout << "\nSus items es de: " << items << endl;
+    cout << "\n---------------------------\n";
+    cout << "Que desea pedir?: ";
+    cin >> r;
+    switch (r[0]) {
+    case 'p':
+      carrito += Pizza;
+      break;
+    case 's':
+      carrito += Soda;
+      break;
+    case 'n':
+      carrito += Nuggets;
+      break;
+    case 'S':
+      carrito += Sopa;
+      break;
+    case 'a':
+      carrito += agua;
+      break;
+    case 'E':
+      break;
+    default:
+      cout << "\n no existe ningun producto con esa letra\n";
+      break;
+    }
+  }
+  if (r[0] == 'E') {
+    cout << "\n---------------------------\n";
+    cout << "Gracias por su compra\n";
+    cout << "\n---------------------------\n";
+    cout << "Su factura es de: \n" << factura;
+    cout << "\n---------------------------\n";
+    cout << "Su total a pagar es de: " << carrito << endl;
+    cout << "\n---------------------------\n";
+    cout << "\nSus items es de: " << items << endl;
+  }
+  return 0;
+}
